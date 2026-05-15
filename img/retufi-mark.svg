@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Retufi mark">
+  <rect width="160" height="160" rx="34" fill="none"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="18">
+    <path d="M58 46 C38 46 34 58 34 72 L34 78" stroke="#111315"/>
+    <path d="M102 46 C122 46 126 58 126 72 L126 78" stroke="#7B8F83"/>
+    <path d="M58 114 C38 114 34 102 34 88 L34 82" stroke="#7B8F83"/>
+    <path d="M102 114 C122 114 126 102 126 88 L126 82" stroke="#111315"/>
+  </g>
+  <circle cx="80" cy="24" r="11" fill="#111315"/>
+  <circle cx="80" cy="136" r="11" fill="#111315"/>
+  <rect x="68" y="73" width="24" height="14" rx="7" fill="#111315" opacity=".92"/>
+</svg>

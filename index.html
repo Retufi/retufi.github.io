@@ -1,169 +1,154 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevUp | Ergonomia digital e performance sustentável para empresas</title>
-<meta name="description" content="DevUp ajuda empresas a melhorar ergonomia digital, bem-estar, produtividade e compliance para equipes que trabalham em computadores.">
-<link rel="alternate icon" href="img/favicon.ico">
+<title>Retufi | Digital ergonomics and sustainable performance for companies</title>
+<meta name="description" content="Retufi helps companies improve digital ergonomics, wellbeing, productivity, and compliance for teams that work on computers.">
+<link rel="icon" href="img/retufi-logo-mark.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--fg:#0a0a0f;--fg-mid:#4a4a5a;--fg-muted:#8a8a9a;--bg:#faf9f7;--bg-dark:#0a0a0f;--accent:#667eea;--accent2:#764ba2;--green:#2ecc71;--red:#e74c3c;--orange:#f39c12;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.1)}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--fg);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,backdrop-filter .3s}
-nav.scrolled{background:rgba(10,10,15,0.86);backdrop-filter:blur(20px)}
-.nav-logo{font-family:var(--serif);font-size:24px;color:#fff;text-decoration:none;letter-spacing:-0.5px}
-.nav-logo span{color:var(--accent);font-style:italic}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-link{color:rgba(255,255,255,0.62);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
-.nav-link:hover{color:#fff}
-.lang-switch{display:flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:rgba(255,255,255,0.05)}
-.lang-switch a{color:rgba(255,255,255,.62);text-decoration:none;font-size:11px;font-weight:700;padding:5px 8px;border-radius:999px;letter-spacing:.04em}
-.lang-switch a.active,.lang-switch a:hover{background:rgba(255,255,255,.12);color:#fff}
-.nav-cta{padding:10px 22px;border:1px solid rgba(255,255,255,0.25);border-radius:100px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.3px;transition:all .25s}
-.nav-cta:hover{background:var(--accent);border-color:var(--accent)}
-section{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:100px 48px}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}.reveal-d5{transition-delay:.5s}
-.hero{background:var(--bg-dark);flex-direction:column;text-align:center;gap:30px;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(102,126,234,0.17),transparent),radial-gradient(ellipse 60% 50% at 70% 70%,rgba(118,75,162,0.12),transparent)}
-.hero-kicker{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);position:relative}
-.hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,88px);line-height:1.04;color:#fff;max-width:980px;position:relative;letter-spacing:-1px}
-.hero h1 em{font-style:italic;color:var(--accent);position:relative}
-.hero-sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.58);max-width:720px;line-height:1.65;position:relative}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;border-radius:100px;font-size:15px;font-weight:700;letter-spacing:0.2px;position:relative;transition:transform .25s,box-shadow .25s}
-.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(102,126,234,0.4)}
-.hero-badge{font-size:12px;color:rgba(255,255,255,0.38);position:relative;letter-spacing:0.4px}
-.demo{background:var(--bg-dark);min-height:auto;padding:0 48px 96px}
-.demo-content{max-width:820px;margin:0 auto;text-align:center}
-#demo-canvas{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.42);border:1px solid rgba(255,255,255,0.08);display:block}
-.demo-caption{margin-top:16px;font-size:13px;color:rgba(255,255,255,0.42)}
-.problem,.features,.privacy,.recognition{background:var(--bg);flex-direction:column;gap:56px}
-.solution,.evidence,.faq{background:var(--bg-dark);color:#fff;flex-direction:column;gap:56px}
-.compliance{background:linear-gradient(135deg,#0f0c29,#1a1145,#24243e);color:#fff;flex-direction:column;gap:48px}
-.contact{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;flex-direction:column;gap:32px;text-align:center;min-height:82vh}
-.section-header{text-align:center;max-width:760px}
-.section-kicker{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.section-title{font-family:var(--serif);font-size:clamp(34px,5vw,58px);line-height:1.1;letter-spacing:-0.5px;color:var(--fg)}
-.solution .section-title,.evidence .section-title,.compliance .section-title,.faq .section-title,.contact .section-title{color:#fff}
-.section-title em{font-style:italic;color:var(--accent)}
-.section-sub{margin-top:16px;font-size:17px;color:var(--fg-mid);line-height:1.65}
-.solution .section-sub,.evidence .section-sub,.compliance .section-sub,.faq .section-sub,.contact .section-sub{color:rgba(255,255,255,0.62)}
-.problem-grid,.compliance-grid,.recognition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;width:100%}
-.problem-card,.recognition-card{background:#fff;border-radius:20px;padding:34px 30px;border:1px solid rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s}
-.problem-card:hover,.recognition-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.08)}
-.problem-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;background:rgba(102,126,234,0.1)}
-.problem-card h3,.recognition-card h3{font-family:var(--serif);font-size:24px;margin-bottom:10px;letter-spacing:-0.3px}
-.problem-card p,.recognition-card p{font-size:14px;color:var(--fg-mid);line-height:1.65}
-.recognition-card span{display:block;font-size:13px;font-weight:700;color:var(--accent);margin-bottom:12px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1000px;width:100%}
-.step-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:36px 28px;text-align:center;backdrop-filter:blur(10px)}
-.step-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin-bottom:16px}
-.step-card h3{font-family:var(--serif);font-size:22px;margin-bottom:8px}
-.step-card p{font-size:13px;color:rgba(255,255,255,0.56);line-height:1.6}
-.checks-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin-top:0}
-.check-tag{padding:8px 16px;border-radius:100px;background:var(--glass);border:1px solid var(--glass-border);font-size:12px;font-weight:600;color:rgba(255,255,255,0.75);backdrop-filter:blur(10px)}
-.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:960px;width:100%}
-.feature-card{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:28px;display:flex;gap:16px;align-items:flex-start;transition:transform .3s,box-shadow .3s}
-.feature-card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.06)}
-.feature-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#fff}
-.feature-card h3{font-size:15px;font-weight:700;margin-bottom:4px;letter-spacing:-0.2px}
-.feature-card p{font-size:13px;color:var(--fg-mid);line-height:1.55}
-.compliance-grid{grid-template-columns:repeat(2,1fr);max-width:940px}
-.compliance-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:28px;backdrop-filter:blur(10px)}
-.compliance-card .tag{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:0.5px;margin-bottom:12px;background:rgba(102,126,234,0.2);color:#aebcff}
-.compliance-card h3{font-family:var(--serif);font-size:23px;margin-bottom:8px}
-.compliance-card p{font-size:13px;color:rgba(255,255,255,0.58);line-height:1.6}
-.evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1120px;width:100%}
-.evidence-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:30px 24px;text-align:center;backdrop-filter:blur(10px)}
-.evidence-icon{font-size:40px;margin-bottom:14px}
-.evidence-card h4{font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:8px}
-.evidence-card p{font-size:13px;color:rgba(255,255,255,0.56);line-height:1.6}
-.privacy-flow{display:flex;align-items:center;gap:18px;max-width:880px;flex-wrap:wrap;justify-content:center}
-.flow-node{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:24px 28px;text-align:center;min-width:150px}
-.flow-node h4{font-size:14px;font-weight:800;margin-bottom:4px}
-.flow-node p{font-size:12px;color:var(--fg-muted)}
-.flow-arrow{font-size:24px;color:var(--accent);font-weight:300}
-.privacy-badges{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.priv-badge{padding:10px 18px;border-radius:100px;background:#fff;border:1px solid rgba(0,0,0,0.06);font-size:13px;font-weight:600;color:var(--fg);display:flex;align-items:center;gap:8px}
-.priv-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
-.contact-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-.contact-btn{padding:16px 36px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;transition:all .25s;letter-spacing:0.2px;background:#fff;color:var(--accent)}
-.contact-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.2)}
-footer{background:var(--bg-dark);color:rgba(255,255,255,0.35);text-align:center;padding:32px 48px;font-size:12px;border-top:1px solid rgba(255,255,255,0.06)}
-@media(max-width:940px){.nav-link{display:none}.problem-grid,.steps,.compliance-grid,.recognition-grid{grid-template-columns:1fr}.evidence-grid{grid-template-columns:repeat(2,1fr)}section{padding:90px 24px}nav{padding:16px 20px}.nav-right{gap:10px}.nav-cta{display:none}}
-@media(max-width:620px){.features-grid,.evidence-grid{grid-template-columns:1fr}.hero h1{font-size:42px}.flow-arrow{transform:rotate(90deg)}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function() {
+  const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+  // Avoid redirect loops
+  const path = window.location.pathname.toLowerCase();
+
+  if (path.endsWith('/pt') || path.endsWith('/es')) {
+    return;
+  }
+
+  if (lang.startsWith('pt')) {
+    window.location.replace('/pt');
+    return;
+  }
+
+  if (lang.startsWith('es')) {
+    window.location.replace('/es');
+    return;
+  }
+})();
+</script>
+
 </head>
 <body>
 <nav id="nav">
-  <a href="#inicio" class="nav-logo">Dev<span>Up</span></a>
+  <a href="#inicio" class="nav-logo" aria-label="Retufi"><img src="img/retufi-logo-mark.png" alt="Retufi"></a>
   <div class="nav-right">
-    <a href="#como-funciona" class="nav-link">Como funciona</a><a href="#compliance" class="nav-link">Compliance</a><a href="#diferenciais" class="nav-link">Diferenciais</a>
+    <a href="#como-funciona" class="nav-link">How it works</a>
+    <a href="#compliance" class="nav-link">Compliance</a>
+    <a href="#diferenciais" class="nav-link">Differentiators</a>
     <div class="lang-switch" aria-label="Language selector">
-      <a href="index.html" class="active">PT</a>
-      <a href="en.html" class="">EN</a>
-      <a href="es.html" class="">ES</a>
+      <a href="/pt">PT</a>
+      <a href="/" class="active">EN</a>
+      <a href="/es">ES</a>
     </div>
-    <a href="#contato" class="nav-cta">Agendar demonstração</a>
+    <a href="/whatsapp" class="nav-cta">Book a demo</a>
   </div>
 </nav>
 
 <section class="hero" id="inicio">
-  <span class="hero-kicker reveal">Ergonomia digital para trabalho em computadores</span>
-  <h1 class="reveal reveal-d1">Sua equipe protegida.<br>Sua empresa em <em>conformidade</em>.</h1>
-  <p class="hero-sub reveal reveal-d2">O DevUp ajuda empresas a cuidar da postura, da ergonomia digital e da performance sustentável de pessoas que trabalham muitas horas em computadores — com alertas em tempo real, indicadores comportamentais e relatórios para apoiar compliance ocupacional.</p>
-  <a href="#contato" class="hero-cta reveal reveal-d3">Agendar uma demonstração <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  <p class="hero-badge reveal reveal-d4">Para equipes presenciais, híbridas ou remotas que trabalham diante de telas.</p>
-</section>
+  <span class="hero-kicker reveal">Digital ergonomics for computer-based work</span>
+  <h1 class="reveal reveal-d1">Your team protected.<br>Your company in <em>compliance</em>.</h1>
+  <p class="hero-sub reveal reveal-d2">Retufi helps companies support posture, digital ergonomics, and sustainable performance for people who spend many hours working on computers — with real-time alerts, behavioral indicators, and reports to support occupational compliance.</p>
+    <div class="contact-actions reveal reveal-d2"><a href="/whatsapp" class="contact-btn">Book a demo <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+    </section>
 <section class="demo" id="demo">
   <div class="demo-content reveal">
     <canvas id="demo-canvas" width="480" height="360"></canvas>
-    <p class="demo-caption">Monitoramento de postura em tempo real via webcam, com processamento local e foco em privacidade.</p>
+    <p class="demo-caption">Real-time posture monitoring via webcam, with local processing and a privacy-first approach.</p>
   </div>
 </section>
 <script src="demo-anim.js"></script>
+
 <section class="problem" id="problema">
-  <div class="section-header reveal"><div class="section-kicker">O problema</div><h2 class="section-title">O trabalho em computadores cobra um preço <em>invisível</em></h2><p class="section-sub">Dores, fadiga, postura inadequada e excesso de tempo sentado afetam produtividade, bem-estar e exposição da empresa a riscos ocupacionais.</p></div>
-  <div class="problem-grid"><div class="problem-card reveal reveal-d1"><div class="problem-icon">🪑</div><h3>Ergonomia no dia a dia</h3><p>A maior parte das empresas só olha para ergonomia em treinamentos pontuais, sem acompanhamento contínuo da rotina real.</p></div><div class="problem-card reveal reveal-d2"><div class="problem-icon">🧠</div><h3>Fadiga e produtividade</h3><p>Trabalho intenso em telas exige pausas, consciência corporal e intervenções leves ao longo do dia.</p></div><div class="problem-card reveal reveal-d3"><div class="problem-icon">⚖️</div><h3>Compliance ocupacional</h3><p>Empresas precisam demonstrar boas práticas, registrar ações preventivas e apoiar políticas de saúde e segurança no trabalho.</p></div></div>
+  <div class="section-header reveal">
+    <div class="section-kicker">The problem</div>
+    <h2 class="section-title">Computer-based work comes with an <em>invisible</em> cost</h2>
+    <p class="section-sub">Pain, fatigue, poor posture, and excessive sitting affect productivity, wellbeing, and a company’s exposure to occupational risks.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card reveal reveal-d1"><div class="problem-icon">🪑</div><h3>Everyday ergonomics</h3><p>Most companies only address ergonomics through occasional training, without continuous support for real daily routines.</p></div>
+    <div class="problem-card reveal reveal-d2"><div class="problem-icon">🧠</div><h3>Fatigue and productivity</h3><p>Intense screen-based work requires breaks, body awareness, and light interventions throughout the day.</p></div>
+    <div class="problem-card reveal reveal-d3"><div class="problem-icon">⚖️</div><h3>Occupational compliance</h3><p>Companies need to demonstrate good practices, record preventive actions, and support workplace health and safety policies.</p></div>
+  </div>
 </section>
+
 <section class="solution" id="como-funciona">
-  <div class="section-header reveal"><div class="section-kicker">A solução</div><h2 class="section-title">Uma camada contínua de cuidado para equipes digitais</h2><p class="section-sub">O DevUp usa visão computacional e inteligência comportamental para apoiar colaboradores enquanto trabalham — sem transformar cuidado em vigilância.</p></div>
-  <div class="steps"><div class="step-card reveal reveal-d1"><div class="step-num">1</div><h3>Detecta sinais posturais</h3><p>Acompanha referências corporais pela webcam durante o uso do computador.</p></div><div class="step-card reveal reveal-d2"><div class="step-num">2</div><h3>Intervém no momento certo</h3><p>Gera alertas e recomendações simples para pausas, ajuste postural e autocuidado.</p></div><div class="step-card reveal reveal-d3"><div class="step-num">3</div><h3>Documenta boas práticas</h3><p>Oferece indicadores e relatórios para apoiar gestão, RH e compliance.</p></div></div>
-  <div class="checks-row reveal reveal-d4"><span class="check-tag">Nível dos olhos</span><span class="check-tag">Cabeça à frente</span><span class="check-tag">Ombros</span><span class="check-tag">Distância da tela</span><span class="check-tag">Rotação corporal</span><span class="check-tag">Tempo sentado</span><span class="check-tag">Lembretes de pausa</span><span class="check-tag">Score diário</span><span class="check-tag">Relatórios</span></div>
+  <div class="section-header reveal">
+    <div class="section-kicker">The solution</div>
+    <h2 class="section-title">A continuous care layer for digital teams</h2>
+    <p class="section-sub">Retufi uses computer vision and behavioral intelligence to support employees while they work — without turning care into surveillance.</p>
+  </div>
+  <div class="steps">
+    <div class="step-card reveal reveal-d1"><div class="step-num">1</div><h3>Detects postural signals</h3><p>Tracks body references through the webcam during computer use.</p></div>
+    <div class="step-card reveal reveal-d2"><div class="step-num">2</div><h3>Intervenes at the right moment</h3><p>Generates simple alerts and recommendations for breaks, posture adjustment, and self-care.</p></div>
+    <div class="step-card reveal reveal-d3"><div class="step-num">3</div><h3>Documents good practices</h3><p>Provides indicators and reports to support management, HR, and compliance.</p></div>
+  </div>
+  <div class="checks-row reveal reveal-d4"><span class="check-tag">Eye level</span><span class="check-tag">Forward head</span><span class="check-tag">Shoulders</span><span class="check-tag">Screen distance</span><span class="check-tag">Body rotation</span><span class="check-tag">Sitting time</span><span class="check-tag">Break reminders</span><span class="check-tag">Daily score</span><span class="check-tag">Reports</span></div>
 </section>
+
 <section class="features" id="empresas">
-  <div class="section-header reveal"><div class="section-kicker">Para empresas</div><h2 class="section-title">Ergonomia, bem-estar e compliance em uma única plataforma</h2></div>
-  <div class="features-grid"><div class="feature-card reveal reveal-d1"><div class="feature-icon">🔔</div><div><h3>Alertas inteligentes</h3><p>Intervenções leves durante o trabalho para reduzir tempo em posições inadequadas.</p></div></div><div class="feature-card reveal reveal-d2"><div class="feature-icon">📊</div><div><h3>Dashboards corporativos</h3><p>Indicadores agregados para RH, gestão e saúde ocupacional, sem expor imagens dos colaboradores.</p></div></div><div class="feature-card reveal reveal-d3"><div class="feature-icon">📝</div><div><h3>Relatórios de conformidade</h3><p>Documentação de ações, adesão e boas práticas para apoiar políticas internas e auditorias.</p></div></div><div class="feature-card reveal reveal-d4"><div class="feature-icon">🌎</div><div><h3>Uso em qualquer modelo de trabalho</h3><p>Funciona para equipes presenciais, híbridas e remotas que usam computadores no dia a dia.</p></div></div><div class="feature-card reveal reveal-d5"><div class="feature-icon">🔒</div><div><h3>Privacidade por desenho</h3><p>O foco está em metadados comportamentais e indicadores agregados — não em armazenar vídeo da câmera.</p></div></div><div class="feature-card reveal reveal-d1"><div class="feature-icon">💼</div><div><h3>Experiência B2B</h3><p>Uma solução pensada para empresas que precisam cuidar de pessoas, produtividade e risco ocupacional.</p></div></div></div>
+  <div class="section-header reveal"><div class="section-kicker">For companies</div><h2 class="section-title">Ergonomics, wellbeing, and compliance in a single platform</h2></div>
+  <div class="features-grid">
+    <div class="feature-card reveal reveal-d1"><div class="feature-icon">🔔</div><div><h3>Smart alerts</h3><p>Light interventions during work to reduce time spent in poor positions.</p></div></div>
+    <div class="feature-card reveal reveal-d2"><div class="feature-icon">📊</div><div><h3>Corporate dashboards</h3><p>Aggregated indicators for HR, management, and occupational health, without exposing employee images.</p></div></div>
+    <div class="feature-card reveal reveal-d3"><div class="feature-icon">📝</div><div><h3>Reports de conformidade</h3><p>Documentation of actions, adoption, and good practices to support internal policies and audits.</p></div></div>
+    <div class="feature-card reveal reveal-d4"><div class="feature-icon">🌎</div><div><h3>Works across any work model</h3><p>Works for on-site, hybrid, and remote teams that use computers every day.</p></div></div>
+    <div class="feature-card reveal reveal-d5"><div class="feature-icon">🔒</div><div><h3>Privacy by design</h3><p>The focus is on behavioral metadata and aggregated indicators — not on storing camera video.</p></div></div>
+    <div class="feature-card reveal reveal-d1"><div class="feature-icon">💼</div><div><h3>B2B experience</h3><p>A solution designed for companies that need to care for people, productivity, and occupational risk.</p></div></div>
+  </div>
 </section>
+
 <section class="compliance" id="compliance">
-  <div class="section-header reveal"><div class="section-kicker">Compliance</div><h2 class="section-title">Uma ferramenta para apoiar obrigações de saúde e segurança</h2><p class="section-sub">O DevUp ajuda empresas a estruturar evidências de cuidado ergonômico e bem-estar no trabalho em computadores. No Brasil, conversa com Normas Regulamentadoras como a NR-17; internacionalmente, dialoga com práticas de occupational health, workplace wellbeing e ESG.</p></div>
-  <div class="compliance-grid"><div class="compliance-card reveal reveal-d1"><span class="tag">NR-17</span><h3>Ergonomia digital</h3><p>Acompanhamento de hábitos, pausas e sinais posturais para apoiar programas de ergonomia.</p></div><div class="compliance-card reveal reveal-d2"><span class="tag">Saúde ocupacional</span><h3>Prevenção e documentação</h3><p>Registros e relatórios para demonstrar ações preventivas e cultura de cuidado.</p></div><div class="compliance-card reveal reveal-d3"><span class="tag">Europa e mercados globais</span><h3>Workplace wellbeing</h3><p>Adequação a ambientes corporativos que precisam comprovar boas práticas de bem-estar e segurança.</p></div><div class="compliance-card reveal reveal-d4"><span class="tag">Teletrabalho e escritório</span><h3>Um produto para telas</h3><p>Aplicável tanto a equipes remotas quanto a pessoas trabalhando presencialmente em computadores.</p></div></div>
+  <div class="section-header reveal">
+    <div class="section-kicker">Compliance</div>
+    <h2 class="section-title">A tool to support health and safety obligations</h2>
+    <p class="section-sub">Retufi helps companies structure evidence of ergonomic care and wellbeing in computer-based work. In Brazil, it aligns with regulatory standards such as NR-17; internationally, it connects with occupational health, workplace wellbeing, and ESG practices.</p>
+  </div>
+  <div class="compliance-grid">
+    <div class="compliance-card reveal reveal-d1"><span class="tag">NR-17</span><h3>Digital ergonomics</h3><p>Tracking habits, breaks, and postural signals to support ergonomics programs.</p></div>
+    <div class="compliance-card reveal reveal-d2"><span class="tag">Occupational health</span><h3>Prevention and documentation</h3><p>Records and reports to demonstrate preventive actions and a culture of care.</p></div>
+    <div class="compliance-card reveal reveal-d3"><span class="tag">Europe and global markets</span><h3>Workplace wellbeing</h3><p>Fit for corporate environments that need to demonstrate good wellbeing and safety practices.</p></div>
+    <div class="compliance-card reveal reveal-d4"><span class="tag">Remote work and office</span><h3>A product for screen-based work</h3><p>Applicable to both remote teams and people working on computers on site.</p></div>
+  </div>
 </section>
+
 <section class="evidence" id="diferenciais">
-  <div class="section-header reveal"><div class="section-kicker">Diferenciais</div><h2 class="section-title">Mais do que um software de postura</h2></div>
-  <div class="evidence-grid"><div class="evidence-card reveal reveal-d1"><div class="evidence-icon">🎓</div><h4>Ciência aplicada</h4><p>O DevUp nasce conectado à pesquisa acadêmica em ergonomia digital, sustentabilidade cognitiva, trabalho em computadores e interação humano-IA.</p></div><div class="evidence-card reveal reveal-d2"><div class="evidence-icon">📈</div><h4>Dados comportamentais</h4><p>Sem armazenar imagens da câmera, a plataforma pode gerar metadados agregados sobre postura, pausas, fadiga e hábitos de trabalho.</p></div><div class="evidence-card reveal reveal-d3"><div class="evidence-icon">⚙️</div><h4>Automação inteligente</h4><p>Relatórios, alertas, acompanhamento e suporte podem ser automatizados para reduzir esforço operacional das empresas.</p></div><div class="evidence-card reveal reveal-d4"><div class="evidence-icon">🚀</div><h4>Histórico CoDe/DevUp</h4><p>A equipe vem de um ecossistema que já realizou mais de 1.200 vendas high-ticket e formou centenas de profissionais de tecnologia.</p></div></div>
+  <div class="section-header reveal"><div class="section-kicker">Differentiators</div><h2 class="section-title">More than posture software</h2></div>
+  <div class="evidence-grid">
+    <div class="evidence-card reveal reveal-d1"><div class="evidence-icon">🎓</div><h4>Applied science</h4><p>Retufi is born connected to academic research in digital ergonomics, cognitive sustainability, computer-based work, and human-AI interaction.</p></div>
+    <div class="evidence-card reveal reveal-d2"><div class="evidence-icon">📈</div><h4>Behavioral data</h4><p>Without storing camera images, the platform can generate aggregated metadata about posture, breaks, fatigue, and work habits.</p></div>
+    <div class="evidence-card reveal reveal-d3"><div class="evidence-icon">⚙️</div><h4>Intelligent automation</h4><p>Reports, alerts, tracking, and support can be automated to reduce companies’ operational effort.</p></div>
+    <div class="evidence-card reveal reveal-d4"><div class="evidence-icon">🚀</div><h4>CoDe/DevUp track record</h4><p>The team comes from an ecosystem that has already completed more than 1,200 high-ticket sales and trained hundreds of technology professionals.</p></div>
+  </div>
 </section>
+
 <section class="privacy" id="privacidade">
-  <div class="section-header reveal"><div class="section-kicker">Privacidade</div><h2 class="section-title">Cuidado sem vigilância</h2><p class="section-sub">O produto é desenhado para apoiar o colaborador, não para fiscalizá-lo. O uso corporativo deve privilegiar indicadores agregados, transparência e consentimento.</p></div>
-  <div class="privacy-flow reveal reveal-d1"><div class="flow-node"><h4>Webcam</h4><p>sinal local</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Processamento</h4><p>no dispositivo</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Metadados</h4><p>indicadores</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Empresa</h4><p>dados agregados</p></div></div>
-  <div class="privacy-badges reveal reveal-d2"><span class="priv-badge"><span class="dot"></span>Sem armazenar vídeo bruto</span><span class="priv-badge"><span class="dot"></span>Indicadores agregados</span><span class="priv-badge"><span class="dot"></span>LGPD by design</span><span class="priv-badge"><span class="dot"></span>Transparência para colaboradores</span></div>
+  <div class="section-header reveal"><div class="section-kicker">Privacy</div><h2 class="section-title">Care without surveillance</h2><p class="section-sub">The product is designed to support employees, not to police them. Corporate use should prioritize aggregated indicators, transparency, and consent.</p></div>
+  <div class="privacy-flow reveal reveal-d1"><div class="flow-node"><h4>Webcam</h4><p>local signal</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Processamento</h4><p>on device</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Metadata</h4><p>indicators</p></div><div class="flow-arrow">→</div><div class="flow-node"><h4>Company</h4><p>aggregated data</p></div></div>
+  <div class="privacy-badges reveal reveal-d2"><span class="priv-badge"><span class="dot"></span>No raw video storage</span><span class="priv-badge"><span class="dot"></span>Aggregated indicators</span><span class="priv-badge"><span class="dot"></span>LGPD by design</span><span class="priv-badge"><span class="dot"></span>Transparency for employees</span></div>
 </section>
+
 <section class="recognition" id="historico">
-  <div class="section-header reveal"><div class="section-kicker">Parcerias e reconhecimento</div><h2 class="section-title">Histórico que valida execução</h2><p class="section-sub">O DevUp se apoia em um ecossistema que conecta mercado, inovação e desenvolvimento de talentos.</p></div>
-  <div class="recognition-grid"><div class="recognition-card reveal reveal-d1"><h3>Maravalley.Rio</h3><span>Hub de inovação e tecnologia</span><p>Ecossistema de inovação da cidade do Rio de Janeiro que conecta startups, pesquisadores e empresas de tecnologia.</p></div><div class="recognition-card reveal reveal-d2"><h3>Web Summit Lisboa</h3><span>Evento internacional</span><p>O DevUp foi apresentado no Web Summit Lisboa como iniciativa brasileira de formação em tecnologia para a era da IA.</p></div><div class="recognition-card reveal reveal-d3"><h3>CoDe Conhecimento</h3><span>Edtech parceira</span><p>Edtech cofounded pelos criadores do DevUp, com histórico de formação, empregabilidade e centenas de profissionais alocados no mercado.</p></div></div>
+  <div class="section-header reveal"><div class="section-kicker">Partnerships and recognition</div><h2 class="section-title">A track record that validates execution</h2><p class="section-sub">Retufi is supported by an ecosystem that connects business, innovation, and talent development.</p></div>
+  <div class="recognition-grid">
+    <div class="recognition-card reveal reveal-d1"><h3>Maravalley.Rio</h3><span>Innovation and technology hub</span><p>An innovation ecosystem in the city of Rio de Janeiro that connects startups, researchers, and technology companies.</p></div>
+    <div class="recognition-card reveal reveal-d2"><h3>Web Summit Lisboa</h3><span>International event</span><p>The project was presented at Web Summit Lisbon as a Brazilian initiative for technology education in the AI era.</p></div>
+    <div class="recognition-card reveal reveal-d3"><h3>CoDe Conhecimento</h3><span>Partner edtech</span><p>An edtech cofounded by Retufi’s creators, with a track record in education, employability, and hundreds of professionals placed in the market.</p></div>
+  </div>
 </section>
+
 <section class="contact" id="contato">
-  <div class="section-header reveal"><h2 class="section-title">Conheça o DevUp na sua empresa</h2><p class="section-sub">Agende uma conversa para ver a ferramenta, discutir demandas de ergonomia digital e entender como o DevUp pode apoiar suas políticas de saúde, produtividade e compliance.</p></div>
-  <div class="contact-actions reveal reveal-d2"><a href="https://www.joindevup.com/whatsapp-corporativo" class="contact-btn" target="_blank" rel="noopener noreferrer">Agendar uma demonstração</a></div>
+  <div class="section-header reveal"><h2 class="section-title">Bring Retufi to your company</h2><p class="section-sub">Schedule a conversation to see the tool, discuss digital ergonomics needs, and understand how Retufi can support your health, productivity, and compliance policies.</p></div>
+  <div class="contact-actions reveal reveal-d2"><a href="/whatsapp" class="contact-btn">Book a demo</a></div>
 </section>
-<footer><p>© 2026 DevUp. Ergonomia digital e performance sustentável para trabalho em computadores.</p></footer>
+
+<footer><p>© 2026 Retufi. Sustainable Performance for the AI Era.</p></footer>
 <script>
 const obs = new IntersectionObserver((entries) => {entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });}, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));

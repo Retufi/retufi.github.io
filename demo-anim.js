@@ -206,7 +206,7 @@
   // ---- DETECTION LINES ----
   function drawDetectionLine(a, b, ok) {
     const p1 = toC(a), p2 = toC(b);
-    const color = ok ? '#00ff44' : '#ff3333';
+    const color = ok ? '#7B8F83' : '#B8825A';
 
     // Glow
     X.shadowColor = color;
@@ -249,7 +249,7 @@
   // ---- LEAN BACK WARNING ----
   function drawLeanWarning(now, alpha) {
     if (alpha <= 0) return;
-    const color = '#ff3333';
+    const color = '#B8825A';
     const cx = W / 2, cy = 30, sz = 16;
     const pulse = 0.6 + 0.4 * Math.sin(now / 250);
 
@@ -307,7 +307,7 @@
       const cx = sw * i + sw / 2;
       const cy = y + barH / 2;
       const ok = badness < item.failAt;
-      const color = ok ? '#00ff44' : '#ff3333';
+      const color = ok ? '#7B8F83' : '#B8825A';
 
       X.shadowColor = color;
       X.shadowBlur = 4;
@@ -317,7 +317,7 @@
       X.fill();
       X.shadowBlur = 0;
 
-      X.fillStyle = 'rgba(255,255,255,0.8)';
+      X.fillStyle = 'rgba(246,246,243,0.82)';
       X.fillText(item.label, cx + 8, cy);
     });
   }
@@ -329,7 +329,7 @@
     X.font = '9px monospace';
     X.textAlign = 'left';
     X.textBaseline = 'top';
-    X.fillStyle = '#888';
+    X.fillStyle = '#7B8F83';
     const d = 11 + Math.floor(Math.sin(now / 1500) * 2);
     const fps = 5 + Math.floor(Math.sin(now / 2500));
     X.fillText(`${d}ms \u00b7 ${fps}d/s \u00b7 5fps`, 4, 3);
@@ -350,10 +350,10 @@
     X.clearRect(0, 0, W, H);
 
     // Background
-    X.fillStyle = '#131320';
+    X.fillStyle = '#111315';
     X.fillRect(0, 0, W, H);
     const g = X.createRadialGradient(W * 0.45, H * 0.4, 0, W * 0.45, H * 0.4, W * 0.7);
-    g.addColorStop(0, 'rgba(102,126,234,0.03)');
+    g.addColorStop(0, 'rgba(123,143,131,0.08)');
     g.addColorStop(1, 'transparent');
     X.fillStyle = g;
     X.fillRect(0, 0, W, H);
